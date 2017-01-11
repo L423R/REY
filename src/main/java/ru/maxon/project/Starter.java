@@ -1,6 +1,6 @@
 package ru.maxon.project;
 
-import ru.maxon.project.Frames.StartFrame;
+import ru.maxon.project.View.StartFrame;
 
 /**
  * Created by Dracula on 10.01.2017.

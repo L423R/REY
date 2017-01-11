@@ -1,4 +1,4 @@
-package ru.maxon.project.Frames;
+package ru.maxon.project.View;
 
 import java.awt.Container;
 import java.awt.Dimension;
