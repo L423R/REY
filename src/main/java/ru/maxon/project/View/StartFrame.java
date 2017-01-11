@@ -1,9 +1,12 @@
 package ru.maxon.project.View;
 
 import ru.maxon.project.Controller.StartFrameListener;
+import ru.maxon.project.Queries;
 
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.text.ParseException;
 
 
 /**
@@ -18,22 +21,18 @@ public class StartFrame extends JFrame {
     private StartFrameListener frameListener;
 
     private JLabel label4 = new JLabel("c");
-    private JLabel label2= new JLabel("Задайте рабочий интервал д.м.гггг например 1.5.2017");
+    private JLabel label2= new JLabel("Задайте рабочий интервал дд.мм.гггг например 01.05.2017       ");
     private JLabel label3 = new JLabel("по");
-    private JTextField textField1 = new JTextField(10);
-    private JTextField textField2 = new JTextField(10);
+
+    private JFormattedTextField textField1=null;
+    private JFormattedTextField textField2 = null;
 
     public StartFrame(StartFrameListener frameListener) throws HeadlessException {
         super("StartThis");
         this.frameListener = frameListener;
-        setBounds(500,300,350,300);
+        setBounds(500,300,390,300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        String[] items = {
-                "2016/2017 1",
-                "2016/2017 2",
-                "2017/2018 1",
-        };
 
         Container container = getContentPane();
         container.setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
@@ -42,12 +41,23 @@ public class StartFrame extends JFrame {
         container.add(label);
 
 
-        comboBox.setModel(new DefaultComboBoxModel(items));
+        comboBox.setModel(new DefaultComboBoxModel(frameListener.getSemArray()));
         comboBox.addActionListener(frameListener.actionListener);
         container.add(comboBox);
 
 
         button.addActionListener(frameListener.actionListener2);
+
+        MaskFormatter mf = null;
+        try {
+            mf = new MaskFormatter("##.##.####");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        mf.setPlaceholderCharacter('_');
+        textField1 = new JFormattedTextField(mf);
+
+        textField2 = new JFormattedTextField(mf);
 
         container.add(label2);
         container.add(label4);
@@ -55,24 +65,22 @@ public class StartFrame extends JFrame {
         container.add(label3);
         container.add(textField2);
         container.add(button);
-        System.out.println("textfield"+ textField1.getText());
-
 
     }
 
-    public JTextField getTextField1() {
+    public JFormattedTextField getTextField1() {
         return textField1;
     }
 
-    public void setTextField1(JTextField textField1) {
+    public void setTextField1(JFormattedTextField textField1) {
         this.textField1 = textField1;
     }
 
-    public JTextField getTextField2() {
+    public JFormattedTextField getTextField2() {
         return textField2;
     }
 
-    public void setTextField2(JTextField textField2) {
+    public void setTextField2(JFormattedTextField textField2) {
         this.textField2 = textField2;
     }
 }

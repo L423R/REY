@@ -1,6 +1,7 @@
 package ru.maxon.project.Controller;
 
 import ru.maxon.project.Model.Model;
+import ru.maxon.project.Queries;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,14 +29,15 @@ public class StartFrameListener {
     public ActionListener actionListener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             JComboBox box = (JComboBox) e.getSource();
-            model.setSemestr((String) box.getSelectedItem());
-            model.getFrame().label.setText(model.getSemestr());
+            Object selectedItem = box.getSelectedItem();
+            model.getFrame().label.setText((String) selectedItem);
         }
     };
 
     public ActionListener actionListener2 = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            if (!(model.getSemestr() ==null))
+            String sem = model.getFrame().label.getText();
+            if (!(sem.equals("####/#### #")))
             {
 
                 try
@@ -44,13 +46,15 @@ public class StartFrameListener {
                     int day= Integer.parseInt(mas[0]);
                     int month= Integer.parseInt(mas[1]);
                     int year= Integer.parseInt(mas[2]);
-                    model.setStartDate(new Date(year-1900,month,day));
+                    model.setStartDateOfWork(new Date(year-1900,month,day));
                     String [] mas1 = model.getFrame().getTextField2().getText().split("\\.");
                     day= Integer.parseInt(mas1[0]);
                     month= Integer.parseInt(mas1[1]);
                     year= Integer.parseInt(mas1[2]);
-                    model.setEndDate(new Date(year-1900,month,day));
-                    model.getFrame().setVisible(false);
+                    model.setEndDateOfWork(new Date(year-1900,month,day));
+                    Queries.fillAll(model,sem);
+                    //model.getFrame().setVisible(false);
+
                 }catch (Exception ex)
                 {
                     JOptionPane.showMessageDialog(model.getFrame(),"Не верно введены даты работы");
@@ -61,4 +65,10 @@ public class StartFrameListener {
             }
         }
     };
+
+
+    public String[] getSemArray()
+    {
+        return Queries.getNameSem();
+    }
 }

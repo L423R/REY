@@ -9,7 +9,6 @@ import ru.maxon.project.View.StartFrame;
  */
 public class Starter {
     public static void main(String[] args) {
-
         StartFrameListener frameListener = new StartFrameListener();
         Model model = new Model();
         StartFrame startFrame = new StartFrame(frameListener);
