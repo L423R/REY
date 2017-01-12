@@ -1,6 +1,6 @@
 package ru.maxon.project.Model;
 
-import ru.maxon.project.View.StartFrame;
+import ru.maxon.project.View.startFrame.StartFrame;
 
 import java.sql.Date;
 

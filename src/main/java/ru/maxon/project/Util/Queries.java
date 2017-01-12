@@ -1,4 +1,4 @@
-package ru.maxon.project;
+package ru.maxon.project.Util;
 
 import ru.maxon.project.Model.Model;
 
