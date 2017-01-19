@@ -1,6 +1,6 @@
 package ru.maxon.project.Controller;
 
-import ru.maxon.project.Model.Model;
+import ru.maxon.project.Model.StartModel;
 import ru.maxon.project.Util.Queries;
 
 
@@ -11,17 +11,17 @@ import java.sql.Date;
  */
 public class Controller {
 
-    private Model model;
+    private StartModel startModel;
     public Controller() {
 
     }
 
-    public void setModel(Model model) {
-        this.model = model;
+    public void setStartModel(StartModel startModel) {
+        this.startModel = startModel;
     }
 
-    public Model getModel() {
-        return model;
+    public StartModel getStartModel() {
+        return startModel;
     }
 
 
@@ -32,37 +32,39 @@ public class Controller {
 
     public void setAll(Date date1,Date date2,String sem)
     {
-        model.setStartDateOfWork(date1);
-        model.setEndDateOfWork(date2);
-        Queries.fillAll(model,sem);
+        startModel.setStartDateOfWork(date1);
+        startModel.setEndDateOfWork(date2);
+        Queries.fillAll(startModel,sem);
     }
 
 
     public String getModelSem() {
-        return model.getSem();
+        return startModel.getSem();
     }
 
     public String getModelYear() {
-        return model.getYear();
+        return startModel.getYear();
     }
 
     public String getModelSemNumber() {
-        return String.valueOf(model.getSemNumber());
+        return String.valueOf(startModel.getSemNumber());
     }
 
     public String getModelSemStart() {
-        return String.valueOf(model.getStartSem());
+        return String.valueOf(startModel.getStartSem());
     }
 
     public String getModelSemEnd() {
-        return String.valueOf(model.getEndSem());
+        return String.valueOf(startModel.getEndSem());
     }
 
     public String getModelStartDateOfWork() {
-        return String.valueOf(model.getStartDateOfWork());
+        return String.valueOf(startModel.getStartDateOfWork());
     }
 
     public String getModelEndDateOfWork() {
-        return String.valueOf(model.getEndDateOfWork());
+        return String.valueOf(startModel.getEndDateOfWork());
     }
+
+    //public
 }

@@ -1,6 +1,11 @@
-package ru.maxon.project.View.mainFrame;
+package ru.maxon.project.View;
 
 import ru.maxon.project.Controller.Controller;
+import ru.maxon.project.View.mainFrame.InfoPanel;
+import ru.maxon.project.View.mainFrame.tabbedPanels.DocsPanel;
+import ru.maxon.project.View.mainFrame.tabbedPanels.OtchetPanel;
+import ru.maxon.project.View.mainFrame.tabbedPanels.PrepodPanel;
+import ru.maxon.project.View.mainFrame.tabbedPanels.RaspPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +17,7 @@ import java.awt.event.ActionListener;
  */
 public class MainFrame extends JFrame {
 
-    static Controller controller;
+    public static Controller controller;
     /*public static void main(String[] args) {
         MainFrame mainFrame = new MainFrame(null);
         mainFrame.setVisible(true);
@@ -20,7 +25,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame(Controller controller) throws HeadlessException {
         MainFrame.controller = controller;
-        setBounds(500,0,550,600);
+        setBounds(500,0,580,600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         Container container = getContentPane();
@@ -37,7 +42,9 @@ public class MainFrame extends JFrame {
         tabbedPane.setFont(font);
         JPanel pane2 = new JPanel(new BorderLayout());
         tabbedPane.addTab("Расписание",new RaspPanel(new FlowLayout(FlowLayout.CENTER,150,10)));
-        tabbedPane.addTab("Second",pane2);
+        tabbedPane.addTab("Преподаватели",new PrepodPanel());
+        tabbedPane.addTab("Документы",new DocsPanel());
+        tabbedPane.addTab("Сводки и отчеты",new OtchetPanel());
         tabbedPane.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JButton button1 = new JButton("Выход из приложения");

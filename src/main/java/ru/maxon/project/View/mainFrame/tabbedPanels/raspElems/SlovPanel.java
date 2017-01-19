@@ -1,4 +1,6 @@
-package ru.maxon.project.View.mainFrame;
+package ru.maxon.project.View.mainFrame.tabbedPanels.raspElems;
+
+import ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.slovPanel.*;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -52,21 +54,24 @@ public class SlovPanel extends JPanel {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                DiscSlov discSlov = new DiscSlov();
+                discSlov.setVisible(true);
             }
         });
 
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                KafSlov kafSlov = new KafSlov();
+                kafSlov.setVisible(true);
             }
         });
 
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                ProgSlov progSlov = new ProgSlov();
+                progSlov.setVisible(true);
             }
         });
 
@@ -80,14 +85,16 @@ public class SlovPanel extends JPanel {
         button5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                NaprSlov naprSlov = new NaprSlov();
+                naprSlov.setVisible(true);
             }
         });
 
         button6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                MetodistsSlov metodistsSlov = new MetodistsSlov();
+                metodistsSlov.setVisible(true);
             }
         });
 

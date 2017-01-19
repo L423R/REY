@@ -1,8 +1,8 @@
 package ru.maxon.project;
 
 import ru.maxon.project.Controller.Controller;
-import ru.maxon.project.Model.Model;
-import ru.maxon.project.View.startFrame.StartFrame;
+import ru.maxon.project.Model.StartModel;
+import ru.maxon.project.View.StartFrame;
 
 /**
  * Created by Dracula on 10.01.2017.
@@ -10,10 +10,10 @@ import ru.maxon.project.View.startFrame.StartFrame;
 public class Starter {
     public static void main(String[] args) {
         Controller frameListener = new Controller();
-        Model model = new Model();
+        StartModel startModel = new StartModel();
         StartFrame startFrame = new StartFrame(frameListener);
-        frameListener.setModel(model);
-        model.setFrame(startFrame);
+        frameListener.setStartModel(startModel);
+        startModel.setFrame(startFrame);
 
         startFrame.setVisible(true);
     }

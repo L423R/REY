@@ -31,14 +31,22 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.date_sem" active-filter-id="EMPTY_FILTER" />
+    <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.kaf" active-filter-id="EMPTY_FILTER" />
     <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.sem_date" active-filter-id="EMPTY_FILTER">
       <filter id="841f9cfe-1583-45ca-8664-3f4f24630d67" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="1" active="true" />
       </filter>
     </filter-list>
+    <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.progs" active-filter-id="EMPTY_FILTER" />
+    <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.disc" active-filter-id="EMPTY_FILTER" />
+    <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.metodists" active-filter-id="EMPTY_FILTER" />
+    <filter-list connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" dataset="diplom_db.napravl" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
-    <last-used-providers />
+    <last-used-providers>
+      <object-type object-type="TABLE" editor-provider="DATA" />
+    </last-used-providers>
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
     <mapping file-url="file://$PROJECT_DIR$/src/main/resources/test.sql" connection-id="94952c7b-c6e1-403e-80c4-7c6dfe7a8d68" current-schema="diplom_db" />

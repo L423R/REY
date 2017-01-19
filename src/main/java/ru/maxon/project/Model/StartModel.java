@@ -1,13 +1,13 @@
 package ru.maxon.project.Model;
 
-import ru.maxon.project.View.startFrame.StartFrame;
+import ru.maxon.project.View.StartFrame;
 
 import java.sql.Date;
 
 /**
  * Created by Maxon on 11.01.2017.
  */
-public class Model {
+public class StartModel {
     private int id;
     private String sem;
     private StartFrame frame;
@@ -18,7 +18,7 @@ public class Model {
     private String year;
     private int semNumber;
 
-    public Model() {
+    public StartModel() {
     }
 
 
@@ -98,7 +98,7 @@ public class Model {
 
     @Override
     public String toString() {
-        return "Model{" +
+        return "StartModel{" +
                 "id=" + id +
                 ", sem='" + sem + '\'' +
                 ", startSem=" + startSem +

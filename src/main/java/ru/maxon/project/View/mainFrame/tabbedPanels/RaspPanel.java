@@ -1,4 +1,6 @@
-package ru.maxon.project.View.mainFrame;
+package ru.maxon.project.View.mainFrame.tabbedPanels;
+
+import ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.SlovPanel;
 
 import javax.swing.*;
 import java.awt.*;

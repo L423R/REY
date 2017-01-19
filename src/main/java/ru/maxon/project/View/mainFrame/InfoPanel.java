@@ -1,5 +1,7 @@
 package ru.maxon.project.View.mainFrame;
 
+import ru.maxon.project.View.MainFrame;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;

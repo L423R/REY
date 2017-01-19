@@ -1,7 +1,6 @@
-package ru.maxon.project.View.startFrame;
+package ru.maxon.project.View;
 
 import ru.maxon.project.Controller.Controller;
-import ru.maxon.project.View.mainFrame.MainFrame;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
