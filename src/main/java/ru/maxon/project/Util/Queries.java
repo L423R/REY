@@ -1,6 +1,7 @@
 package ru.maxon.project.Util;
 
 import ru.maxon.project.Model.*;
+import ru.maxon.project.Model.slovModels.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -204,6 +205,42 @@ public class Queries {
             statement1.close();
             connector.putConnection(connection);
             return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ArrayList<GroupModel> getGroupArray()
+    {
+        ArrayList<GroupModel> list = new ArrayList<>();
+        try
+        {
+            Connection connection = connector.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT groups.КодГр, groups.КодПрогр, groups.ДатаОткр, groups.СокрНГ, progs.НаимПрогр," +
+                    " groups.КодМет, metodists.Фамилия, groups.РасшПрог, groups.ПрофПрог, groups.ДатаЗакр, groups.Примеч, groups.ПрЭксп\n" +
+                    "FROM (groups LEFT JOIN metodists ON groups.КодМет = metodists.КодМет) LEFT JOIN progs ON groups.КодПрогр = progs.КодПрогр");
+            while (resultSet.next())
+            {
+                int id = resultSet.getInt(1);
+                int kodProg = resultSet.getInt(2);
+                java.sql.Date dateOp = resultSet.getDate(3);
+                String ng = resultSet.getString(4);
+                String nameProg = resultSet.getString(5);
+                String nameMet = resultSet.getString(7);
+                String raschProg = resultSet.getString(8);
+                String profProg = resultSet.getString(9);
+                java.sql.Date dateCl = resultSet.getDate(10);
+                String prim = resultSet.getString(11);
+                byte xEcsp = resultSet.getByte(12);
+                GroupModel groupModel = new GroupModel(id+" ",ng,dateOp,nameProg,raschProg,profProg,nameMet,dateCl,xEcsp,prim);
+                list.add(groupModel);
+            }
+            statement.close();
+            connector.putConnection(connection);
+            return list;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

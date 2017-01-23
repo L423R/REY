@@ -1,8 +1,7 @@
 package ru.maxon.project.Controller;
 
-import ru.maxon.project.Model.DiscModel;
+import ru.maxon.project.Model.slovModels.DiscModel;
 import ru.maxon.project.Util.Queries;
-import ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.slovPanel.DiscSlov;
 
 import java.util.ArrayList;
 

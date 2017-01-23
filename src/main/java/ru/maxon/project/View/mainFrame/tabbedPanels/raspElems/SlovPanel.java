@@ -78,7 +78,8 @@ public class SlovPanel extends JPanel {
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GroupSlov groupSlov = new GroupSlov(null);
+                groupSlov.setVisible(true);
             }
         });
 

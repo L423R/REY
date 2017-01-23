@@ -26,12 +26,12 @@ public class test {
         System.out.println(new java.sql.Date(year,month,day));*/
 
 
-       //connect();
-        try {
+       connect();
+       /* try {
             testFrame();
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 
@@ -40,7 +40,10 @@ public class test {
     {
         String name ="root";
         String password="root";
-        String query = "Select * from sem_date";
+        String query = "SELECT groups.КодГр, groups.КодПрогр, groups.ДатаОткр, groups.СокрНГ, progs.НаимПрогр," +
+                " groups.КодМет, metodists.Фамилия, groups.РасшПрог, groups.ПрофПрог, groups.ДатаЗакр, groups.Примеч, groups.ПрЭксп\n" +
+                "FROM (groups LEFT JOIN metodists ON groups.КодМет = metodists.КодМет) LEFT JOIN progs ON groups.КодПрогр = progs.КодПрогр";
+               // "ORDER BY groups.КодПрогр, groups.ДатаОткр DESC , groups.СокрНГ";
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/diplom_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",name,password);
             Statement statement = connection.createStatement();
@@ -48,8 +51,19 @@ public class test {
 
             while (resultSet.next())
             {
+
                 int id = resultSet.getInt(1);
-                System.out.println(id);
+                int kodProg = resultSet.getInt(2);
+                java.sql.Date dateOp = resultSet.getDate(3);
+                String ng = resultSet.getString(4);
+                String nameProg = resultSet.getString(5);
+                String nameMet = resultSet.getString(7);
+                String raschProg = resultSet.getString(8);
+                String profProg = resultSet.getString(9);
+                java.sql.Date dateCl = resultSet.getDate(10);
+                String prim = resultSet.getString(11);
+                byte xEcsp = resultSet.getByte(12);
+                System.out.println(id+" "+kodProg+" "+dateOp+" "+ng+" "+nameProg+" "+nameMet+" "+raschProg+" "+profProg+" "+dateCl+" "+prim+" "+xEcsp);
             }
 
             statement.close();

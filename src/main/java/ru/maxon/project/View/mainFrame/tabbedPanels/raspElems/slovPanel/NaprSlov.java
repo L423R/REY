@@ -1,7 +1,7 @@
 package ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.slovPanel;
 
-import ru.maxon.project.Model.NaprModel;
-import ru.maxon.project.Model.tablesModel.TableModelNapr;
+import ru.maxon.project.Model.slovModels.NaprModel;
+import ru.maxon.project.Model.slovModels.tablesModel.TableModelNapr;
 import ru.maxon.project.Util.Queries;
 
 import javax.swing.*;

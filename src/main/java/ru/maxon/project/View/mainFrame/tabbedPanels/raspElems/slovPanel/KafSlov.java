@@ -1,7 +1,7 @@
 package ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.slovPanel;
 
-import ru.maxon.project.Model.KafModel;
-import ru.maxon.project.Model.tablesModel.TableModelKaf;
+import ru.maxon.project.Model.slovModels.KafModel;
+import ru.maxon.project.Model.slovModels.tablesModel.TableModelKaf;
 import ru.maxon.project.Util.Queries;
 
 import javax.swing.*;

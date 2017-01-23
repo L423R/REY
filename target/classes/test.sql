@@ -1,1 +1,1 @@
-select * from sem_date;
+SELECT stavki.КодСтав, stavki.НаимСтав, stavki.ЕдИзм, stavki.КодВида, npr.НаимНПР, stavki.КодНПР, stavki.Ставка_Спец, stavki.Ставка_Маг, stavki.Примеч FROM stavki INNER JOIN npr ON stavki.КодНПР = npr.КодНПР WHERE stavki.КодВида=1;
