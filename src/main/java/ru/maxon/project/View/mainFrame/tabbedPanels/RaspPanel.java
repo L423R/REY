@@ -1,5 +1,7 @@
 package ru.maxon.project.View.mainFrame.tabbedPanels;
 
+import ru.maxon.project.Controller.RaspController;
+import ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.CorrectRasp;
 import ru.maxon.project.View.mainFrame.tabbedPanels.raspElems.SlovPanel;
 
 import javax.swing.*;
@@ -11,7 +13,7 @@ import java.awt.event.ActionListener;
  * Created by Maxon on 12.01.2017.
  */
 public class RaspPanel extends JPanel {
-    public RaspPanel(LayoutManager layout) {
+    public RaspPanel(LayoutManager layout, final RaspController controller) {
         super(layout);
         Font font = new Font("Verdana", Font.BOLD, 12);
         setPreferredSize(new Dimension(500,300));
@@ -36,7 +38,8 @@ public class RaspPanel extends JPanel {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                CorrectRasp correctRasp = new CorrectRasp(controller);
+                correctRasp.setVisible(true);
             }
         });
 
@@ -70,4 +73,6 @@ public class RaspPanel extends JPanel {
         add(panel);
 
     }
+
+
 }

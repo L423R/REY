@@ -1,6 +1,7 @@
 package ru.maxon.project.View;
 
 import ru.maxon.project.Controller.Controller;
+import ru.maxon.project.Controller.RaspController;
 import ru.maxon.project.View.mainFrame.InfoPanel;
 import ru.maxon.project.View.mainFrame.tabbedPanels.DocsPanel;
 import ru.maxon.project.View.mainFrame.tabbedPanels.OtchetPanel;
@@ -41,7 +42,7 @@ public class MainFrame extends JFrame {
         Font font = new Font("Verdana", Font.BOLD, 15);
         tabbedPane.setFont(font);
         JPanel pane2 = new JPanel(new BorderLayout());
-        tabbedPane.addTab("Расписание",new RaspPanel(new FlowLayout(FlowLayout.CENTER,150,10)));
+        tabbedPane.addTab("Расписание",new RaspPanel(new FlowLayout(FlowLayout.CENTER,150,10),new RaspController()));
         tabbedPane.addTab("Преподаватели",new PrepodPanel());
         tabbedPane.addTab("Документы",new DocsPanel());
         tabbedPane.addTab("Сводки и отчеты",new OtchetPanel());

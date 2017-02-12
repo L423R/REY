@@ -3,6 +3,9 @@ package ru.maxon.project.View;
 import ru.maxon.project.Controller.Controller;
 
 import javax.swing.*;
+import javax.swing.plaf.metal.DefaultMetalTheme;
+import javax.swing.plaf.metal.MetalLookAndFeel;
+import javax.swing.plaf.metal.OceanTheme;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,7 +29,18 @@ public class StartFrame extends JFrame {
         //final Controller frameListener1 = frameListener;
         setBounds(500,300,390,300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+       // MetalLookAndFeel.setCurrentTheme(new OceanTheme());
+        // устанавливаем Look And Feel
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            // If Nimbus is not available, you can set the GUI to another look and feel.
+        }
 
         Container container = getContentPane();
         container.setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
